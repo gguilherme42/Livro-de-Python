@@ -14,7 +14,7 @@ pagina2.write('''
 </head>
 <body>
 ''')
-for r, diretorios, arquivos in os.walk('/home/atem/PycharmProjects/Livro/Cap.9'):
+for r, diretorios, arquivos in os.walk('/home/atem/PycharmProjects/Livro/Cap_9'):
     pagina2.write(f'<h2>Caminho: {r}</h2>')
     for d in diretorios:
         pagina2.write(f'<h3>* {d}/</h3>')
