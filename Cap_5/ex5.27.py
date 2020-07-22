@@ -1,7 +1,5 @@
 def palindrome(n):
-    if n == n[::-1]:
-        return True
-    return False
+    return n == n[::-1]
 
 
 print(palindrome(input('Digite um número: ').strip()))
