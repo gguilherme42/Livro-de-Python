@@ -1,17 +1,59 @@
-'''
-Ex 7.7:
-    Modifique o programa de forma a escrever a palavra secreta
-    caso o jogador perca.
-'''
+DicioErros = {0: '''X==:==
+X  :  
+X    
+X
+X
+X
+X-------''',
+              1: '''X==:==
+X  :  
+X  O  
+X
+X
+X
+X-------''',
+              2: '''X==:==
+X  :  
+X  O  
+X  |
+X
+X
+X-------''',
+              3: '''X==:==
+X  :  
+X  O  
+X \|
+X
+X
+X-------''',
+              4: '''X==:==
+X  :  
+X  O  
+X \|/
+X
+X
+X-------''',
+              5: '''X==:==
+X  :  
+X  O  
+X \|/
+X |
+X
+X-------''',
+              6: '''X==:==
+X  :  
+X  O  
+X \|/
+X | |
+X
+X-------'''}
+
 palavra = str(input('Digite a palavra secreta: ')).strip().lower()
-# Pulando várias linhas para que o jogador não veja a palavra secreta
 for x in range(100):
     print()
 digitadas = []
 acertos = []
 erros = 0
-# Linha2 -> Torso do boneco; Linha3 -> Dorso do boneco
-linha2 = linha3 = ''
 while True:
     senha = ''
 
@@ -42,27 +84,14 @@ while True:
             erros += 1
             print('Você errou!')
 
-    # Início da corda
-    print('X==:==\nX  :  ')
-    # Cabeça
-    print('X  O  ' if erros >= 1 else 'X')
-    if erros == 2:
-        linha2 = ' |'
-    elif erros == 3:
-        linha2 = '\|'
-    elif erros == 4:
-        linha2 = '\|/'
+    # Boneco
+    try:
+        print(DicioErros[erros])
+    except:
+        print('Erro!')
+    else:
+        if erros == 6:
+            print('Enforcado!')
+            print(f'A palavra secreta era: {palavra}')
+            break
 
-    if erros == 5:
-        linha3 = ' /  '
-    elif erros >= 6:
-        linha3 = ' / \ '
-
-    print(f'X {linha2}')
-    print(f'X{linha3}')
-    # Chão:
-    print('X\n=============')
-    if erros == 6:
-        print('Enforcado!')
-        print(f'A palavra secreta era: {palavra}')
-        break
