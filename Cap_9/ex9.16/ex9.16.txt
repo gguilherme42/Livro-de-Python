@@ -1,0 +1,2 @@
+Cada registro da agenda é gravado em uma linha do arquivo.
+Os campos são separados por '#'.

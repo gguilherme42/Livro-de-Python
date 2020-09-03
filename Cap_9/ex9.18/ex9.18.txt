@@ -1,0 +1,5 @@
+Se o # aparecer no nome ou telefone de uma entrada na agenda,
+ocorrerá um erro ao ler o arquivo.
+Este erro ocorre porque o número de campos esperados na linha
+será diferente de 2.
+Solução: tratar os caracteres nos campos, não permitir usar o separador '#'.

@@ -1,0 +1,5 @@
+Em caso de erro de leitura, o programa para de executar.
+Se o erro ocorrer durante a gravação, os dados não gravados serão perdidos.
+Estes problemas podem ser resolvidos usando tratamento de exceções. O ideal é que
+o programa exiba mensagem de erro e continue rodando. No caso da gravação,
+os dados não devem ser perdidos e o usuário deve poder tentar novamente.

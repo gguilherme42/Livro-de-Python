@@ -74,8 +74,10 @@ def grava():
 
 
 def menu():
-    print('''
-    1 - Novo
+    print(f'''
+    Tamanho da agenda: {len(agenda)}
+    
+    1 - Novo               
     2 - Altera
     3 - Apaga
     4 - Lista
@@ -86,3 +88,20 @@ def menu():
     ''')
     return int(input('Escolha uma opção: '))
 
+
+while True:
+    opcao = menu()
+    if opcao == 0:
+        break
+    elif opcao == 1:
+        novo()
+    elif opcao == 2:
+        altera()
+    elif opcao == 3:
+        apaga()
+    elif opcao == 4:
+        lista()
+    elif opcao == 5:
+        grava()
+    elif opcao == 6:
+        le()

@@ -1,0 +1,1 @@
+Jogador(a): joazin12341 | Acertos: 2 | erros: 6 | Enforcado: SIM
