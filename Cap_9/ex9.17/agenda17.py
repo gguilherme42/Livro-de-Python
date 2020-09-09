@@ -105,3 +105,5 @@ while True:
         grava()
     elif opcao == 6:
         le()
+    else:
+        print('Opção inválida! Digite novamente.')

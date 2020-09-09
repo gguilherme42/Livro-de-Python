@@ -5,6 +5,21 @@ def mostra_dados(n, t):
     print(f'Nome: {n} | Telefone: {t}')
 
 
+def confirma(string):
+    while True:
+        try:
+           r = string.lower().strip()[0]
+        except:
+            print('Resposta Inválida.')
+        else:
+            if r == 's':
+                return True
+            elif r == 'n':
+                return False
+            else:
+                print('Resposta Inválida.')
+
+
 def verifica_input(r):
     return None if '#' in r else r
 
@@ -41,7 +56,9 @@ def apaga():
     global agenda
     p = pesquisa_nome(pede_algo('Nome'))
     if p is not None:
-        del agenda[p]
+        r = confirma(input('Tem certeza? [s/n] '))
+        if r:
+            del agenda[p]
     else:
         print('Nome não encontrado.')
 
@@ -54,7 +71,9 @@ def altera():
         telefone = agenda[p][1]
         print('Encontrado: ')
         mostra_dados(nome, telefone)
-        agenda[p] = [pede_algo('Nome'), pede_algo('Telefone')]
+        r = confirma(input('Tem certeza? [s/n] '))
+        if r:
+            agenda[p] = [pede_algo('Nome'), pede_algo('Telefone')]
     else:
         print('Nome não ecnontrado.')
 
@@ -90,6 +109,15 @@ def grava():
     arquivo.close()
 
 
+def ordena():
+    global agenda
+    try:
+        agenda.sort()
+    except:
+        print('Erro!')
+
+
+
 def menu():
     print(f'''
     Tamanho da agenda: {len(agenda)}
@@ -100,6 +128,7 @@ def menu():
     4 - Lista
     5 - Grava
     6 - Lê
+    7 - Ordenar
     
     0 - Sair
     ''')

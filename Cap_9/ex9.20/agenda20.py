@@ -4,7 +4,6 @@ agenda = []
 def mostra_dados(n, t):
     print(f'Nome: {n} | Telefone: {t}')
 
-
 def verifica_input(r):
     return None if '#' in r else r
 
@@ -90,6 +89,16 @@ def grava():
     arquivo.close()
 
 
+
+def ordena():
+    global  agenda
+    try:
+        agenda.sort()
+    except:
+        print('Erro!')
+
+
+
 def menu():
     print(f'''
     Tamanho da agenda: {len(agenda)}
@@ -100,6 +109,7 @@ def menu():
     4 - Lista
     5 - Grava
     6 - Lê
+    7 - Ordenar
     
     0 - Sair
     ''')
