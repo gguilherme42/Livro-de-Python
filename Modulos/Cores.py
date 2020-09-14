@@ -21,4 +21,3 @@ def colorir(frase, cor, b=0):
         print(f'{cores["r"][1]}Cor inválida!{cores["n"]}')
 
 
-print(f'{colorir("ATENÇÃO!", "w", 1)}')
